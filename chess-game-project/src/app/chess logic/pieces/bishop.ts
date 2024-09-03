@@ -1,6 +1,6 @@
-import { fenChar } from "../models";
+import { fenChar, Coords,Color } from "../models";
 import { piece } from "./pieces";
-import { Coords } from "../models";
+
 
 export class Bishop extends piece{
     protected override fenChar: fenChar;
@@ -10,4 +10,8 @@ export class Bishop extends piece{
         { x:-1, y: 1 },
         { x: -1, y: -1 } 
     ];
+    constructor(private pieceColor: Color){
+        super(pieceColor);
+        this.fenChar = pieceColor === Color.White ? fenChar.wBishop : fenChar.bBishop;
+    }
 }
