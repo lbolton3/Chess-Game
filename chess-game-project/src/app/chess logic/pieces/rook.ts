@@ -1,7 +1,7 @@
 import { fenChar, Coords,Color } from "../models";
-import {piece} from "./pieces";
+import {Piece} from "./pieces";
 
-export class Rook extends piece{
+export class rook extends Piece{
     private Moved: boolean = false;
     protected override fenChar: fenChar;
     protected override directions: Coords[] = [

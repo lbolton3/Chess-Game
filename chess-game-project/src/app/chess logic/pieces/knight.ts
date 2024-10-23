@@ -1,8 +1,9 @@
 import { fenChar,Coords,Color } from "../models";
-import { piece } from "./pieces";
+import { Piece } from "./pieces";
 
 
-export class knight extends piece{
+export class knight extends Piece{
+    private Moved: boolean = false;
     protected override fenChar: fenChar;
     protected override directions: Coords[] = [
         {x: 1,y: 2},
@@ -19,5 +20,11 @@ export class knight extends piece{
     constructor(private pieceColor: Color){
         super(pieceColor);
         this.fenChar = pieceColor === Color.White ? fenChar.wKnight : fenChar.bKnight;
+    }
+    public get hasMoved():boolean{
+        return this.Moved;
+    }
+    public set hasMoved(_){
+        this.Moved = true;
     }
 }
