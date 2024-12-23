@@ -1,5 +1,5 @@
 import { Color, Coords, fenChar } from "../models";
-export abstract class piece{
+export abstract class Piece{
     protected abstract fenChar: fenChar;
     protected abstract directions: Coords[];
     constructor(private color_: Color){}
@@ -15,6 +15,7 @@ export abstract class piece{
     public get color(): Color{
         return this.color;
     }
+    
 
 
 }
