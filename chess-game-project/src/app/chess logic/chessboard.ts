@@ -10,7 +10,10 @@ import { rook } from "./pieces/rook";
 
 export class ChessBoard{
     private chessBoard:(Piece|null)[][];
-    private playerColor = Color.White;
+    private playColor = Color.White;
+    public get PlayerColor(): Color{
+        return this.playColor;
+    }
 
 
     constructor(){
@@ -40,11 +43,6 @@ export class ChessBoard{
             ],
         ]
     }
-
-    public get PlayerColor(): Color{
-        return this.playerColor;
-    }
-
     public get chessBoardView(): (fenChar|null)[][]{
         return this.chessBoard.map(row =>{
             return row.map(piece => piece instanceof Piece ? piece.FENChar: null)

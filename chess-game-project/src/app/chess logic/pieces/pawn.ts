@@ -13,7 +13,9 @@ export class pawn extends Piece{
     ];
     constructor(private pieceColor: Color){
         super(pieceColor);
-        if(pieceColor === Color.Black) this.initBlackPawn();
+        if(pieceColor === Color.Black){
+            this.initBlackPawn();
+        } 
         this.fenChar = pieceColor === Color.White ? fenChar.wPawn : fenChar.bPawn;
     }
     private initBlackPawn(): void{
@@ -30,6 +32,8 @@ export class pawn extends Piece{
             {x: 1, y: 1},
             {x: 1, y: -1}
         ];
-        if(this.pieceColor === Color.Black) this.initBlackPawn();
+        if(this.pieceColor === Color.Black){
+            this.initBlackPawn()
+        };
     }
 }
